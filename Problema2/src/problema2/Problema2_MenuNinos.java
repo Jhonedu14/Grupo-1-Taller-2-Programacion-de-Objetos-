@@ -1,13 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package problema2;
 
-/**
- *
- * @author LOQ
- */
-public class Problema2_MenuNinos {
-    
+public class Problema2_MenuNinos extends Problema2_Menu {
+    private double valorHelado;
+    private double valorPastel;
+
+    public Problema2_MenuNinos(String nombrePlato, double valorInicial, double helado, double pastel) {
+        super(nombrePlato, valorInicial);
+        this.valorHelado = helado;
+        this.valorPastel = pastel;
+    }
+
+    @Override
+    public void calcularValorMenu() {
+        valor = valorInicial + valorHelado + valorPastel;
+    }
+
+    @Override
+    public String toString() {
+        return "\n"
+                + "\nMenú para Niños\n"
+                + "-----------------\n"
+                + "Plato: " + nombrePlato + "\n"
+                + String.format("Valor del menú: %.2f\n", valor)
+                + String.format("Valor Inicial: %.2f\n", valorInicial)
+                + String.format("Helado: %.2f\n", valorHelado)
+                + String.format("Pastel: %.2f\n", valorPastel);
+    }
 }

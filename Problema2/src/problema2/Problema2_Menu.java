@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package problema2;
 
-/**
- *
- * @author LOQ
- */
-public class Problema2_Menu {
-    
+public abstract class Problema2_Menu {
+    protected String nombrePlato;
+    protected double valor;
+    protected double valorInicial;
+
+    public Problema2_Menu(String nombrePlato, double valorInicial) {
+        this.nombrePlato = nombrePlato;
+        this.valorInicial = valorInicial;
+    }
+
+    public abstract void calcularValorMenu();
+
+    public double getValorMenu() {
+        return valor;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" + "nombrePlato=" + nombrePlato + ", valor=" + valor + '}';
+    }
 }
